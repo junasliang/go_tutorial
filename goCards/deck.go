@@ -45,3 +45,16 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
+
+// access to saved deck
+func newDeckFromFile(filename string) deck {
+	bs, err := os.ReadFile(filename)
+	if err != nil {
+		// if error, log and exit
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+	// convert byte slice back to deck
+	s := strings.Split(string(bs), ",")
+	return deck(s)
+}
