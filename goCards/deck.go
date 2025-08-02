@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strings"
+)
 
 // Create a new type of 'deck'
 // slice of strings
@@ -28,6 +32,13 @@ func deal(d deck, handSize int) (deck, deck) {
 //func shuffle()
 
 // save to file
+func (d deck) saveToFile(filename string) error {
+	return os.WriteFile(filename, []byte(d.toString()), 0666)
+}
+
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
+}
 
 func (d deck) print() {
 	for i, card := range d {
