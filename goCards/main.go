@@ -1,9 +1,7 @@
 package main
 
 func main() {
-	cards := deck{card(), card()}
-	cards = append(cards, "ace of diamonds")
-
+	cards := newDeck()
 	cards.print()
 }
 
