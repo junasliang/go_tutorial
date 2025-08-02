@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -29,7 +30,13 @@ func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
 
-//func shuffle()
+// shuffle a deck of cards
+func (d deck) shuffle() {
+	for i := range d {
+		newPosition := rand.Intn(len(d) - 1) //psuedo random
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
+}
 
 // save to file
 func (d deck) saveToFile(filename string) error {
