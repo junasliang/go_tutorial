@@ -28,8 +28,8 @@ func main() {
 }
 
 // run to observe pointer features
-func (p person) updateName(newFirstname string) {
-	p.firstName = newFirstname
+func (pPerson *person) updateName(newFirstname string) {
+	(*pPerson).firstName = newFirstname
 }
 
 func (p person) print() {
