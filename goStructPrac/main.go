@@ -10,7 +10,7 @@ type contactInfo struct {
 type person struct {
 	firstName string
 	lastName  string
-	contact   contactInfo
+	contactInfo
 }
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 	alex := person{
 		firstName: "Alex",
 		lastName:  "Lee",
-		contact: contactInfo{
+		contactInfo: contactInfo{
 			email:   "alexlee@gmail.com",
 			zipCode: 94000,
 		},
