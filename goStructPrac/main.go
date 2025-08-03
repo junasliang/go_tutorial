@@ -23,7 +23,8 @@ func main() {
 			zipCode: 94000,
 		},
 	}
-	alex.updateName("Dicky")
+	alexPointer := &alex
+	alexPointer.updateName("Dicky")
 	alex.print()
 }
 
