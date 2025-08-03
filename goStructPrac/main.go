@@ -23,6 +23,15 @@ func main() {
 			zipCode: 94000,
 		},
 	}
-	fmt.Println(alex)
-	fmt.Printf("%+v", alex)
+	alex.updateName("Dicky")
+	alex.print()
+}
+
+// run to observe pointer features
+func (p person) updateName(newFirstname string) {
+	p.firstName = newFirstname
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
