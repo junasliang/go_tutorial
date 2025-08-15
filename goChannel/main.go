@@ -21,6 +21,12 @@ func main() {
 		go checkLink(link, c)
 	}
 
+	// go routine:
+	// Never access the same variable
+	// from different child routine.
+	// Only share info by passing in arg
+	// or use channel.
+
 	for l := range c {
 		// use function literal
 		go func(link string) {
